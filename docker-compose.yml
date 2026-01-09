@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  deck-checker:
+    build: .
+    container_name: steam-deck-checker
+    restart: unless-stopped
+    environment:
+      # These reference variables you will define in Portainer
+      - NTFY_TOPIC=${NTFY_TOPIC}
+      - TARGET_URL=${TARGET_URL}
+      - SCOPE_KEYWORD=${SCOPE_KEYWORD}
+      - SEARCH_STRING=${SEARCH_STRING}
+      - CHECK_INTERVAL=${CHECK_INTERVAL:-300}
