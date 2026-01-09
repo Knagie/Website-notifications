@@ -10,7 +10,7 @@ URL = os.getenv("TARGET_URL", "https://store.steampowered.com/sale/steamdeckrefu
 
 def send_ntfy(message, tags="bell", priority="default"):
     try:
-        requests.post(f"https://ntfy.sh/{NTFY_TOPIC}",
+        requests.post(f"https://{NTFY_TOPIC}",
             data=message.encode('utf-8'),
             headers={
                 "Title": "Steam Deck Tracker",
